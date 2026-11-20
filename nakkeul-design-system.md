@@ -465,6 +465,19 @@ Primary 색상은 나끌의 브랜드 컬러인 버밀리온으로, 재생·구�
 - 진행 바: `color/progress/track` · `color/progress/fill`, 높이 `size/progress/height`.
 - 오류 복구: error에서는 오른쪽 버튼이 "다시 시도"(`icon/rotate-ccw`)로 바뀐다. 누르면 buffering으로 전환되고 완료 전까지 다시 누를 수 없다. 재시도 실패 시 error와 담기 상태를 유지한다. 오류 문구는 `color/text/danger`.
 
+### player-button
+리딩뷰 재생 버튼. 84×84 원형(`radius/max`). 속성: `state`(paused · playing).
+
+| state | 아이콘 | 누르면 | 접근성 이름 |
+|---|---|---|---|
+| `paused` | 재생 ▶ | 재생 시작 → playing | "재생" |
+| `playing` | 일시정지 ❚❚ | 멈춤 → paused | "일시정지" |
+
+- 배경 `color/background/white`, 아이콘 `color/icon/basic`.
+- 재생 삼각형은 무게중심이 원의 중심에 오도록 오른쪽으로 약 4px 옮긴 광학 중앙 정렬.
+- 상태는 mini-player·waveform의 재생 상태와 항상 같게 맞춘다.
+- 터치 영역은 원 전체(84, 최소 48 충족).
+
 ### waveform
 오디오 진행 웨이브폼. 36개 변형.
 
