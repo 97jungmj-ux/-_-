@@ -383,6 +383,7 @@ Primary 색상은 나끌의 브랜드 컬러인 버밀리온으로, 재생·구�
 | `icon/headphones` | 오디오 듣기 / 오디오북 표시 |
 | `icon/bell` | 알림 |
 | `icon/rotate-ccw` | 다시 시도 |
+| `icon/arrow-up` · `icon/arrow-down` | 듣는 위치로 이동 (위·아래) |
 
 | 탭바 아이콘 | 출처 |
 |---|---|
@@ -478,6 +479,21 @@ Primary 색상은 나끌의 브랜드 컬러인 버밀리온으로, 재생·구�
 - 재생 삼각형은 무게중심이 원의 중심에 오도록 오른쪽으로 약 4px 옮긴 광학 중앙 정렬.
 - 상태는 mini-player·waveform의 재생 상태와 항상 같게 맞춘다.
 - 터치 영역은 원 전체(84, 최소 48 충족).
+
+### jump-to-playhead
+듣는 위치로 이동 버튼 (리딩뷰 플로팅). 4개 변형.
+
+| 속성 | 타입 | 값 (기본) |
+|---|---|---|
+| `direction` | variant | down · up (down) — 듣는 위치가 화면 아래면 down, 위면 up |
+| `state` | variant | default · pressed (default) |
+| `show-label` | boolean | true — 라벨 "듣는 위치로" |
+
+- 언제: 오디오 재생 중 사용자가 직접 스크롤해서 지금 읽어주는 문장이 화면 밖으로 나가면, 자동 따라가기를 멈추고 버튼을 띄운다. 일시정지 중에는 띄우지 않는다.
+- 탭하면: 듣는 문장이 화면 위쪽 1/3 지점에 오도록 부드럽게 스크롤(약 300ms)하고, 자동 따라가기를 다시 켠 뒤 버튼을 숨긴다. 듣는 문장이 다시 화면 안에 들어와도 자동으로 숨긴다.
+- 위치: 화면 가운데, 플레이어 컨트롤(또는 mini-player) 위 16(`layout/item-gap`). 나타날·사라질 때 아래에서 8px 슬라이드 + 페이드 200ms.
+- 스타일: 높이 40(`size-height/6`) 캡슐(`radius/max`), 배경 `color/button/gray-fill`(눌림 `gray-fill-pressed`), 아이콘 20(`size/icon/medium`) · 글자 `body/xsmall-500` 흰색, 그림자 `shadow/level-3`. 터치 영역은 위아래로 넓혀 48.
+- 접근성 이름: "듣는 위치로 이동"(라벨을 숨겨도 동일). 화살표만으로는 뜻이 약하므로 라벨을 켜 두는 것을 기본으로 한다.
 
 ### waveform
 오디오 진행 웨이브폼. 36개 변형.
