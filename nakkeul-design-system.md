@@ -10,6 +10,7 @@
 | 플랫폼 | iOS · Android 모바일 앱 |
 | 기준 화면 | iPhone 14 (390 × 844) |
 | 단위 | Figma px = iOS pt = Android dp (글자는 sp), 1:1 대응 |
+| 리딩뷰 바탕 | 흰색 (`color/background/white`) |
 | 테마 | 기본(Light) 모드만 지원. 고대비 모드는 다음 단계 예정, 다크 모드는 지원하지 않음 |
 | 글꼴 | Pretendard (`font/family`) |
 | 브랜드 색 | 버밀리온 `primary/40` #FF4030 |
@@ -475,7 +476,7 @@ Primary 색상은 나끌의 브랜드 컬러인 버밀리온으로, 재생·구�
 | `paused` | 재생 ▶ | 재생 시작 → playing | "재생" |
 | `playing` | 일시정지 ❚❚ | 멈춤 → paused | "일시정지" |
 
-- 배경 `color/background/white`, 아이콘 `color/icon/basic`.
+- 배경 `color/background/white`, 아이콘 `color/icon/basic`. 리딩뷰 본문 바탕이 흰색이라 원이 묻히지 않도록 그림자 `shadow/level-2`.
 - 재생 삼각형은 무게중심이 원의 중심에 오도록 오른쪽으로 약 4px 옮긴 광학 중앙 정렬.
 - 상태는 mini-player·waveform의 재생 상태와 항상 같게 맞춘다.
 - 터치 영역은 원 전체(84, 최소 48 충족).
@@ -493,6 +494,7 @@ Primary 색상은 나끌의 브랜드 컬러인 버밀리온으로, 재생·구�
 - 탭하면: 듣는 문장이 화면 위쪽 1/3 지점에 오도록 부드럽게 스크롤(약 300ms)하고, 자동 따라가기를 다시 켠 뒤 버튼을 숨긴다. 듣는 문장이 다시 화면 안에 들어와도 자동으로 숨긴다.
 - 위치: 화면 가운데, 플레이어 컨트롤(또는 mini-player) 위 16(`layout/item-gap`). 나타날·사라질 때 아래에서 8px 슬라이드 + 페이드 200ms.
 - 스타일: 높이 40(`size-height/6`) 캡슐(`radius/max`), 배경 `color/button/gray-fill`(눌림 `gray-fill-pressed`), 아이콘 20(`size/icon/medium`) · 글자 `body/xsmall-500` 흰색, 그림자 `shadow/level-3`. 터치 영역은 위아래로 넓혀 48.
+- 리딩뷰 바탕(흰색) 위에서 어두운 캡슐로 본문과 확실히 구분된다(흰 글자/배경 약 19:1).
 - 접근성 이름: "듣는 위치로 이동"(라벨을 숨겨도 동일). 화살표만으로는 뜻이 약하므로 라벨을 켜 두는 것을 기본으로 한다.
 
 ### waveform
